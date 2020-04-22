@@ -1,0 +1,22 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<br><br><br><br><br>
+<div class="row justify-content-center mt-5">
+	<div class="col-md-7 text-center">
+
+		{% if user.is_authenticated %}
+			<h1> View current Todo's </h1>
+
+		    <a role="button" class="btn btn-primary btn-lg" href="{% url 'currenttodos' %}">Current</a>
+		{% else %}
+			<h1> Create and Track your Todos </h1>
+
+		    <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Start</a>
+		{% endif %}
+	</div>
+</div>
+
+
+{% endblock %}
